@@ -102,7 +102,7 @@ object Tag extends Path {
         "resources" -> (
           for {
             id <- dropletIds
-          } yield ("resource_id" -> id) ~ ("resource_type" -> "droplet")
+          } yield ("resource_id" -> id.toString) ~ ("resource_type" -> "droplet")
         )
       client.postWithEmptyResponse(path ++ Seq(name, "resources"), postBody)
     }

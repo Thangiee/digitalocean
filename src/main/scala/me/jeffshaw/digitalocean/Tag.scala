@@ -104,7 +104,7 @@ object Tag extends Path {
             id <- dropletIds
           } yield ("resource_id" -> id) ~ ("resource_type" -> "droplet")
         )
-      client.postWithEmptyResponse(path :+ name, postBody)
+      client.postWithEmptyResponse(path ++ Seq(name, "resources"), postBody)
     }
   }
 
